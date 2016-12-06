@@ -42,14 +42,16 @@ unsigned int Carrier::count_aircrafts() {
   return aircrafts.size();
 }
 
-void Carrier::print_status_by_aircraft() {
+std::string Carrier::get_status_by_aircraft() {
+  std::string status;
   for (unsigned int i = 0; i < aircrafts.size(); ++i) {
-    std::cout << aircrafts[i]->get_status() << std::endl;
+    status += aircrafts[i]->get_status() + "\n";
   }
+  return status;
 }
 
 unsigned int Carrier::get_all_damage() {
-  unsigned int all_damage = 0;
+  unsigned int all_damage;
   for (unsigned int i = 0; i < aircrafts.size(); ++i) {
     all_damage += aircrafts[i]->all_damage();
   }
@@ -60,7 +62,7 @@ std::string Carrier::get_all_status() {
   if (health_point == 0) {
     return "It's dead Jim :(";
   } else {
-    return "Aircraft count: " + to_string(count_aircrafts()) + ", Ammo storage: " + to_string(stored_ammo) + ", Total damage: " + to_string(get_all_damage()) + "\nAircrafts:\n" + to_string(print_status_by_aircraft());
+    return "Aircraft count: " + to_string(count_aircrafts()) + ", Ammo storage: " + to_string(stored_ammo) + ", Total damage: " + to_string(get_all_damage()) + "\nAircrafts:\n" + get_status_by_aircraft();
   }
 }
 

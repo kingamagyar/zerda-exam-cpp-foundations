@@ -30,5 +30,7 @@ int main() {
 
   cout << c.count_aircrafts() << endl;
 
+  cout << c.get_all_status() << endl;
+
 	return 0;
 }

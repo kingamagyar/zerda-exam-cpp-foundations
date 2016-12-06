@@ -17,7 +17,7 @@ public:
   void fill() throw (const char*);
   void fight(Carrier& attacker);
   unsigned int count_aircrafts();
-  void print_status_by_aircraft();
+  std::string get_status_by_aircraft();
   unsigned int get_all_damage();
   std::string get_all_status();
   virtual ~Carrier();
