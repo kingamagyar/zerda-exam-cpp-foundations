@@ -6,4 +6,3 @@ F16::F16() {
   base_damage = 30;
   type_name = "F16";
 }
-

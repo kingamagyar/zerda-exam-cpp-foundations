@@ -6,4 +6,3 @@ F35::F35() {
   base_damage = 50;
   type_name = "F35";
 }
-

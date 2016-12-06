@@ -1,9 +1,8 @@
-#include <iostream>
-#include "F16.hpp"
-#include "F35.hpp"
+#include "Carrier.hpp"
 using namespace std;
 
 int main() {
+  Carrier c(2, 10);
   F16 a1;
   F35 a2;
 
@@ -21,6 +20,15 @@ int main() {
   cout << a1.fight() << endl;
   cout << a2.fight() << endl;
 
+  try {
+    c.add_aircraft("F16");
+    c.add_aircraft("F16");
+    c.add_aircraft("F35");
+  } catch (const char* excp) {
+    cout << excp << endl;
+  }
+
+  cout << c.count_aircrafts() << endl;
 
 	return 0;
 }
